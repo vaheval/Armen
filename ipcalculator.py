@@ -33,7 +33,7 @@ def hostmin():
 	net2 = (netshift & ( 255 << 16 )) >> 16
 	net3 = (netshift & ( 255 << 8 )) >> 8
 	net4 = netshift & 255
-	return "Nostmin = %d.%d.%d.%d/%d" % (net1,net2,net3,(net4+1),prefix)
+	return "Hostmin = %d.%d.%d.%d/%d" % (net1,net2,net3,(net4+1),prefix)
 
 def brodcast():
 	b = ( 2**( 32 - prefix ) -1 )
