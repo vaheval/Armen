@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+            integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+            crossorigin="anonymous"
+        />
+        <script data-require="angular.js@1.2.0-rc2" data-semver="1.2.0-rc2" src="http://code.angularjs.org/1.2.0-rc.2/angular.js"></script>
+        <script src="sort.js"></script>
+    </head>
+
+    <body ng-controller="Controller">
+        <table width="50%">
+            <thead>
+                <tr>
+                    <th sort order="'name'" by="order" reverse="reverse">Name</th>
+                    <th>Phone</th>
+                    <th sort order="'age'" by="order" reverse="reverse">Age</th>        
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="friend in friends | orderBy:order:reverse">
+                    <td>{{friend.name}}</td>
+                    <td>{{friend.phone}}</td>
+                    <td>{{friend.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
